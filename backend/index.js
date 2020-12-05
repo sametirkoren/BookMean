@@ -3,7 +3,7 @@ let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
 let cors = require("cors");
 const dotenv = require("dotenv");
-
+let apiRouter = require("./api-router");
 dotenv.config();
 let port = process.env.port;
 let dbCon = process.env.cloud_mongodb_con;
@@ -29,7 +29,7 @@ else{
     console.log("mongoDB'ye başarıyla bağlanıldı.");
 }
 
-
+app.use("/api",apiRouter)
 app.get("/",(req,res) => {
     res.send("Hello world");
 });

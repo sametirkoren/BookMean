@@ -1,14 +1,21 @@
 class response{
     constructor(data=null,errors=null)
     {
-        this.errors,
-        this.data
+        this.errors = errors
+        this.data = data;
     }
 
     success(res)
     {
         return res.status(200).json({
             status : "success",
+            data : this.data
+        });
+    }
+    created(res)
+    {
+        return res.status(201).json({
+            status : "created",
             data : this.data
         });
     }
