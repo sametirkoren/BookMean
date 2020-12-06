@@ -19,6 +19,11 @@ var bookSchema = mongoose.Schema({
         type : Number,
         requier : true
     },
+    picture: {
+        type: String,
+        require: true
+
+    },
     created : {
         type : Date,
         default:()=>{
